@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ListSolution {
-    static void main() {
+    public static void main(String args[]) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         try {
@@ -20,33 +20,21 @@ public class ListSolution {
             List<String> itemList = new ArrayList<>(Arrays.asList(tempList));
 
 
-
+            // 2 defa dön
             for (int i = 0; i < numberOfQueries; i++) {
-                String command = reader.readLine();
-                String targetStr = reader.readLine();
+                String command = reader.readLine(); //Insert or Delete
+                String targetStr = reader.readLine();// 5 23 gibi
 
                 String targetStrArr[] = targetStr.split(" ");
 
-                String targetIndex = targetStrArr[0];
-                String targetItem="";
-                try {
-
-                }catch (Exception e){
-                    
-                }
-                if (targetStrArr[1]!=null)
-                     targetItem = targetStrArr[1];
-
-                System.out.println("targetIndex:"+targetIndex);
-                System.out.println("targetItem:"+targetItem);
-
                 if(command.equals("Insert")){
-                    itemList.add(Integer.parseInt(targetIndex), targetItem);
+                    itemList.add(Integer.parseInt(targetStrArr[0]), targetStrArr[1]);
                 }else if (command.equals("Delete")){
-                    itemList.remove(targetIndex);
+                    itemList.remove(Integer.parseInt(targetStrArr[0]));
                 }
             }
 
+            System.out.println(String.join(" ", itemList));
 
         } catch (Exception e) {
             throw new RuntimeException(e);
