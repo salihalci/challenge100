@@ -10,7 +10,7 @@ public class StringTokens {
             System.out.println(0);
             return;
         }
-        
+
         String[] tokens = s.split("[^A-Za-z]+");
 
         System.out.println(tokens.length);
