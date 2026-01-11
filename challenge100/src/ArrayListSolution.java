@@ -15,7 +15,6 @@ public class ArrayListSolution {
             int firstNum = Integer.parseInt(reader.readLine());
 
             for (int i = 0; i < firstNum; i++) {
-
                 String s  = reader.readLine();
                 firstList.add(s);
             }
